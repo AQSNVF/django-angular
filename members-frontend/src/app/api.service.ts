@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
 export class ApiService {
   baseUrl = 'http://localhost:8000/';
   httpHeaders = new HttpHeaders({'Content-Type': 'application/json'});
+  updateMember: any;
 
   constructor(private http: HttpClient) { }
 
@@ -20,4 +21,11 @@ export class ApiService {
     return this.http.get(this.baseUrl + 'members/' + id + '/',
       { headers: this.httpHeaders });
   }
+  saveNewMember(member): Observable<any> {
+    return this.http.post(this.baseUrl + 'members/', member,
+      { headers: this.httpHeaders });
+  }
+
+
+
 }
