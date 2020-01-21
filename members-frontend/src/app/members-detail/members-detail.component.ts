@@ -17,7 +17,7 @@ export class MembersDetailComponent implements OnInit {
     private router: Router,
     private appComponente: AppComponent ) { }
 
-  selected_member = {name: '', surname: ''};
+  selected_member = {id: '', name: '', surname: '' , address: '', phone: '', photo: ''};
   selected_id;
 
   ngOnInit() {
@@ -55,8 +55,9 @@ export class MembersDetailComponent implements OnInit {
       data => {
         let index;
         this.appComponente.members.forEach((e, i) => {
-          if(e.id == this.selected_id)
+          if (e.id === this.selected_id) {
             index = i;
+          }
         });
         this.appComponente.members.splice(index, 1);
       },

@@ -1,16 +1,24 @@
-<h3>Members Detail Component!</h3>
 
-Membro carregado: {{ selected_member.name }} {{ selected_member.surname }}
+    <h1>Members Detail Component!</h1>
+    <span >
+      <img src="{{ selected_member.photo }}" alt="Foto de: {{ selected_member.name }}">
+    </span>
+    <h2>
+    <span>Voce está editando: Id - </span>{{ selected_id }} - {{ selected_member.name }} {{ selected_member.surname }}
+    </h2>
+    <label>Id:</label>
+    <input type="text" [(ngModel)]="selected_member.id" readonly><br>
+    <label>Nome:</label>
+    <input type="text" [(ngModel)]="selected_member.name"><br>
+    <label>Sobrenome:</label>
+    <input type="text" [(ngModel)]="selected_member.surname"><br>
+    <label>Fone:</label>
+    <input type="text" [(ngModel)]="selected_member.phone"><br>
+    <label>Endereço:</label>
+    <input type="text" [(ngModel)]="selected_member.address"><br>
+    <label>Foto:</label>
+    <input type="text" [(ngModel)]="selected_member.photo"><br>
 
- <p>Selected id = {{ selected_id }}</p>
-
- <input type="text" [(ngModel)]="selected_member.id" readonly><br>
- <input type="text" [(ngModel)]="selected_member.name"><br>
- <input type="text" [(ngModel)]="selected_member.surname"><br>
- <input type="text" [(ngModel)]="selected_member.phone"><br>
- <input type="text" [(ngModel)]="selected_member.address"><br>
- <input type="text" [(ngModel)]="selected_member.photo"><br>
-
- <button (click)="update()">Update Member</button><br>
- <button (click)="delete()">Delete Member</button><br>
- <button (click)="newMember()">Novo</button>
+ <button (click)="update()"class="button primary" >Update Member</button>
+ <button (click)="delete()" class="button primary" >Delete Member</button>
+ <button (click)="newMember()" class="button primary" >New Member</button>

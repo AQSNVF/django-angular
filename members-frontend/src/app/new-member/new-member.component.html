@@ -1,8 +1,14 @@
 <h1>Novo Membro</h1>
 
-
- <input type="text" [(ngModel)]="member.name"><br>
- <input type="text" [(ngModel)]="member.surname"><br>
- <input type="text" [(ngModel)]="member.phone"><br>
+<label>Nome</label>
+<input type="text" [(ngModel)]="member.name"><br>
+<label>Sobrenome</label>
+<input type="text" [(ngModel)]="member.surname"><br>
+<label>Fone</label>
+<input type="text" [(ngModel)]="member.phone"><br>
+<label>Endereço</label>
+<input type="text" [(ngModel)]="member.address"><br>
+<label>Foto</label>
+<input type="text" [(ngModel)]="member.photo"><br>
 
  <button (click)="save()">Salvar Membro</button>

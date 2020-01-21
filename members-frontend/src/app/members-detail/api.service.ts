@@ -7,7 +7,9 @@ import { Observable } from 'rxjs';
 })
 export class ApiService {
   baseUrl = 'http://localhost:8000/';
-  httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' });
+  token = 'Token 8356c2e675d8d0015c7735973bf28414eb67654b';
+  httpHeaders = new HttpHeaders().set('Content-Type', 'application/json')
+    .set('Authorization', this.token);
 
   constructor(private http: HttpClient) { }
 
@@ -17,7 +19,7 @@ export class ApiService {
   }
 
   updateMember(member): Observable<any> {
-    let body = { name: member.name, surname: member.surname, phone: member.phone};
+    const body = { name: member.name, surname: member.surname, phone: member.phone, address: member.address, photo: member.photo};
     return this.http.put(this.baseUrl + 'members/' + member.id + '/', body,
       { headers: this.httpHeaders });
   }
